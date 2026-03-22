@@ -2,98 +2,117 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>Figma Features</title>
+  <title>مطعم لذيذ</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
       direction: rtl;
+      background: #f8f8f8;
     }
 
     header {
-      background: #740505;
+      background: #222;
       color: white;
-      padding: 20px;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
       text-align: center;
     }
 
-    .container {
+    .hero h1 {
+      font-size: 50px;
+      background: rgba(131, 13, 13, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .menu {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .menu-items {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
-    .card {
-      background: white;
+    .item {
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center/cover;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgb(255, 255, 255);
+      color: #ffffff;
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #333;
-    }
-
-    .card p {
-      color: #666;
-      line-height: 1.6;
+    footer {
+      background: #ff0000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>مستقبلك</h1>
-  <p><h1>عبد المنعم عزالدين </h1></p>
-  <p> انت بدون كمبيوتر ورقه فاضيه او منزل بدون حاط</p>
+    
+
+<header> <details><summary>الرئيسية</summary><p>المنيو</p><p>اتصل بنا</p></details>
+  <h2>🍔 عبدل منعم عزالدين لي مشويات</h2>
+  <nav>
+    <a href="#"></a>
+    <a href="#">المنيو</a>
+    <a href="#">اتصل بنا</a>
+  </nav>
 </header>
 
-<div class="container">
+<section class="hero" >
+  <h1>عبدل منعم عزالدين</h1>
+</section>
 
-  <div class="card">
-    <h3>اجتهاد في تطبيقات</h3>
-    <p>فكر خارج الصندوق لو فهمته مثل ده انت حتكون معلم عاين لي شمس ما تعاين لي واطه</p>
-  </div>
+<section class="menu">
+  <h2>المنيو</h2>
+  <div class="menu-items">
 
-  <div class="card">
-    <h3>انتي اعمل التطبيقات ما تخلي تطبيقات تعملك </h3>
-    <p>ركز في تطبيق انت الي حتعامله ما هوي الي حيعملك انت مبرمج</p>
-  </div>
+    <div class="item">
+      <h3>مقلوبه</h3>
+      <p>شيه كتان</p>
+    </div>
 
-  <div class="card">
-    <h3>الكلام</h3>
-    <p>انتهي</p>
-  </div>
+    <div class="item">
+      <h3>مورين بي شطه</h3>
+      <p>قوانص</p>
+    </div>
 
-  <div class="card">
-    <h3>تصميم احترافي</h3>
-    <p>وله رايك شنوي</p>
-  </div>
+    <div class="item">
+      <h3>شاوربه كوارع</h3>
+      <p>عصيده و  كسره</p>
+    </div>
 
-  <div class="card">
-    <h3>Prototyping</h3>
-    <p>النجليزي كيف بتاعك</p>
   </div>
+</section>
 
-  <div class="card">
-    <h3>Inspect & Code</h3>
-    <p>خايك ما مكنه</p>
-  </div>
-  <div class="card">
-  <h2>hleem taj alser</h2>
-  
-  </div>
-  <div class="card">
-  <h2>الويب ده عملو ليك بس</h2>
-  
-  </div>
-  <div class="card">
-  <h2>كل سنه وانتي طيب</h2>
-  
-  </div>
+<footer>
+  <p>جدو© 2026 مطعم لذيذ - جميع الحقوق محفوظة</p>
+</footer>
+
 </body>
 </html>
