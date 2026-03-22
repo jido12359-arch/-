@@ -6,29 +6,28 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       direction: rtl;
-      background: #f8f8f8;
+      background: #f4f4f4;
     }
 
     header {
       background: #222;
-      color: white;
+      color: #fff;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
     }
 
     nav a {
-      color: white;
+      color: #fff;
       margin: 0 10px;
       text-decoration: none;
     }
 
     .hero {
-      height: 90vh;
-      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center/cover;
+      height: 80vh;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -37,10 +36,19 @@
     }
 
     .hero h1 {
-      font-size: 50px;
-      background: rgba(131, 13, 13, 0.5);
+      background: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 10px;
+    }
+
+    .btn {
+      background: #e63946;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
     }
 
     .menu {
@@ -48,71 +56,310 @@
       text-align: center;
     }
 
-    .menu-items {
+    .items {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
       gap: 20px;
     }
 
-    .item {
-      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center/cover;
-      padding: 20px;
+    .card {
+      background: white;
+      padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgb(255, 255, 255);
-      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     footer {
-      background: #ff0000;
+      background: #222;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
     }
   </style>
 </head>
 <body>
 
-    
-
-<header> <details><summary>الرئيسية</summary><p>المنيو</p><p>اتصل بنا</p></details>
-  <h2>🍔 عبدل منعم عزالدين لي مشويات</h2>
+<header>
+  <h2>مطعع جدو لزه</h2>
   <nav>
-    <a href="#"></a>
-    <a href="#">المنيو</a>
-    <a href="#">اتصل بنا</a>
+    <a href="#">الرئيسية</a>
+    <a href="#menu">المنيو</a>
+    <a href="#reservation">حجز</a>
   </nav>
 </header>
 
-<section class="hero" >
-  <h1>عبدل منعم عزالدين</h1>
+<section class="hero">
+  <div>
+    <h1>مش ح تقدر تقاويم</h1>
+    <button class="btn" onclick="scrollToMenu()">اطلب اسي بي سرعه</button>
+  </div>
 </section>
 
-<section class="menu">
-  <h2>المنيو</h2>
-  <div class="menu-items">
+<section id="menu" class="menu">
+  <h2>المنيو السوداني 🇸🇩</h2>
 
-    <div class="item">
-      <h3>مقلوبه</h3>
-      <p>شيه كتان</p>
+  <div class="items">
+
+    <!-- كرر هذا الكارد مع تغيير الاسم -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+      <h3>كسرة</h3>
+      <button class="btn" onclick="openModal('كسرة')">طلب</button>
     </div>
 
-    <div class="item">
-      <h3>مورين بي شطه</h3>
-      <p>قوانص</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+      <h3>عصيدة</h3>
+      <button class="btn" onclick="openModal('عصيدة')">طلب</button>
     </div>
 
-    <div class="item">
-      <h3>شاوربه كوارع</h3>
-      <p>عصيده و  كسره</p>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+      <h3>ملاح لحم</h3>
+      <button class="btn" onclick="openModal('ملاح لحم')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح بامية</h3>
+      <button class="btn" onclick="openModal('ملاح بامية')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح روب</h3>
+      <button class="btn" onclick="openModal('ملاح روب')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح تقلية</h3>
+      <button class="btn" onclick="openModal('ملاح تقلية')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>فول سوداني</h3>
+      <button class="btn" onclick="openModal('فول سوداني')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>فطير مشلتت</h3>
+      <button class="btn" onclick="openModal('فطير مشلتت')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>بليلة</h3>
+      <button class="btn" onclick="openModal('بليلة')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>شية</h3>
+      <button class="btn" onclick="openModal('شية')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>مكرونة بالصلصة</h3>
+      <button class="btn" onclick="openModal('مكرونة بالصلصة')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>رز بالعدس</h3>
+      <button class="btn" onclick="openModal('رز بالعدس')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>رز أبيض</h3>
+      <button class="btn" onclick="openModal('رز أبيض')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>كوارع</h3>
+      <button class="btn" onclick="openModal('كوارع')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح نعيمية</h3>
+      <button class="btn" onclick="openModal('ملاح نعيمية')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح ويكة</h3>
+      <button class="btn" onclick="openModal('ملاح ويكة')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>عصير قنقليس</h3>
+      <button class="btn" onclick="openModal('عصير قنقليس')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>عصير مانجو</h3>
+      <button class="btn" onclick="openModal('عصير مانجو')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>عصير ليمون</h3>
+      <button class="btn" onclick="openModal('عصير ليمون')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>عصيدة بالروب</h3>
+      <button class="btn" onclick="openModal('عصيدة بالروب')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح قرع</h3>
+      <button class="btn" onclick="openModal('ملاح قرع')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح بامية باللحم</h3>
+      <button class="btn" onclick="openModal('ملاح بامية باللحم')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>كسرة بالويكة</h3>
+      <button class="btn" onclick="openModal('كسرة بالويكة')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>كسرة بالروب</h3>
+      <button class="btn" onclick="openModal('كسرة بالروب')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح عدس</h3>
+      <button class="btn" onclick="openModal('ملاح عدس')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>ملاح لبن</h3>
+      <button class="btn" onclick="openModal('ملاح لبن')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>فول مدمس</h3>
+      <button class="btn" onclick="openModal('فول مدمس')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>بيض بالجبنة</h3>
+      <button class="btn" onclick="openModal('بيض بالجبنة')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>شاي سوداني</h3>
+      <button class="btn" onclick="openModal('شاي سوداني')">طلب</button>
+    </div>
+
+    <div class="card">
+      <h3>قهوة سودانية</h3>
+      <button class="btn" onclick="openModal('قهوة سودانية')">طلب</button>
     </div>
 
   </div>
 </section>
 
+<section id="reservation" class="menu">
+  <h2>حجز طاولة</h2>
+  <form onsubmit="sendReservation(event)">
+    <input type="text" id="name" placeholder="الاسم" required>
+    <input type="date" id="date" required>
+    <input type="time" id="time" required>
+    <input type="number" id="people" placeholder="عدد الأشخاص" required>
+    <button class="btn">حجز</button>
+  </form>
+</section>
+
 <footer>
-  <p>جدو© 2026 مطعم لذيذ - جميع الحقوق محفوظة</p>
+  <p>© 2026 مطعم جدو لزه</p>
 </footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h3 id="itemName"></h3>
+    <input type="text" id="customerName" placeholder="اسمك">
+    <input type="number" id="quantity" placeholder="الكمية">
+    <button class="btn" onclick="sendWhatsApp()">إرسال الطلب</button>
+    <button class="btn" onclick="closeModal()">إغلاق</button>
+  </div>
+</div>
+
+<script>
+  let currentItem = "";
+
+  function scrollToMenu() {
+    document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function openModal(item) {
+    currentItem = item;
+    document.getElementById("itemName").innerText = "طلب " + item;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  function sendWhatsApp() {
+    let name = document.getElementById("customerName").value;
+    let qty = document.getElementById("quantity").value;
+
+    let message = `طلب جديد:%0Aالوجبة: ${currentItem}%0Aالاسم: ${name}%0Aالكمية: ${qty}`;
+
+    // ضع رقم واتساب هنا (بدل 201234567890)
+    let phone = "201234567890";
+
+    let url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, "_blank");
+  }
+
+  function sendReservation(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let people = document.getElementById("people").value;
+
+    let message = `حجز طاولة:%0Aالاسم: ${name}%0Aالتاريخ: ${date}%0Aالوقت: ${time}%0Aعدد الأشخاص: ${people}`;
+
+    let phone = "201234567890";
+    let url = `https://wa.me/${phone}?text=${message}`;
+
+    window.open(url, "_blank");
+  }
+</script>
 
 </body>
 </html>
